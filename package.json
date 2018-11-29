@@ -1,0 +1,44 @@
+{
+  "name": "webrunify",
+  "version": "0.1.0",
+  "description": "Bundle CommonJS code into an ESM module",
+  "bin": {
+    "webrunify": "bin.js"
+  },
+  "scripts": {
+    "test": "standard *.js && node bin.js test/source.js > test/dist.js && webrun --allow-require test/run.js"
+  },
+  "dependencies": {
+    "JSONStream": "^1.3.5",
+    "browser-pack-flat": "github:brechtcs/browser-pack-flat",
+    "browserify": "^16.2.3",
+    "minimist": "^1.2.0",
+    "module-deps": "^6.2.0"
+  },
+  "devDependencies": {
+    "@rangermauve/webrun": "^3.0.2",
+    "marked": "^0.5.2",
+    "standard": "^12.0.1",
+    "tape": "^4.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brechtcs/webrunify.git"
+  },
+  "keywords": [
+    "commonjs",
+    "esm",
+    "module",
+    "bundle",
+    "browserify",
+    "webrun",
+    "deno",
+    "beaker"
+  ],
+  "bugs": {
+    "url": "https://github.com/brechtcs/webrunify/issues"
+  },
+  "homepage": "https://github.com/brechtcs/webrunify#readme",
+  "author": "Brecht Savelkoul <brecht.savelkoul@gmail.com>",
+  "license": "Apache-2.0"
+}
