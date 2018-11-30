@@ -1,21 +1,11 @@
-var builtin = require('browserify/lib/builtins')
-var json = require('JSONStream')
-var mdeps = require('module-deps')
+var bs = require('browserify')
 var minimist = require('minimist')
-var pack = require('browser-pack-flat')
 var path = require('path')
+var wr = require('./')
 
 var args = minimist(process.argv.slice(2))
-var entries = args._
-var md = mdeps({
-  modules: builtin
-})
+var entries = args._.map(entry => path.resolve(entry))
 
-md.pipe(json.stringify())
-  .pipe(pack({ iife: false, sourceType: 'module' }))
-  .pipe(process.stdout)
-
-entries.forEach(entry => {
-  md.write(path.resolve(entry))
-})
-md.end()
+var b = bs(entries)
+b.plugin(wr)
+b.bundle().pipe(process.stdout)
