@@ -1,7 +1,7 @@
 {
   "name": "webrunify",
   "version": "0.1.0",
-  "description": "Bundle CommonJS code into an ESM module",
+  "description": "Bundle a CommonJS module and its dependencies into a single ES module",
   "main": "index.js",
   "bin": {
     "webrunify": "bin.js"
