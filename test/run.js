@@ -1,10 +1,10 @@
-import parse from './dist.js'
+import join from './dist.js'
 
 var tape = require('./node_modules/tape')
 
 tape('run dist.js', t => {
-  var out = parse('yep *yep*')
+  var out = join('one', 'two', 'three')
 
-  t.strictEqual(out, '<p>yep <em>yep</em></p>\n')
+  t.strictEqual(out, 'one/two/three')
   t.end()
 })

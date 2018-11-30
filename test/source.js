@@ -1,5 +1,5 @@
-var marked = require('marked')
+var path = require('path')
 
-export default function parse () {
-  return marked.apply(this, arguments)
+module.exports = function join () {
+  return path.join.apply(this, arguments)
 }
