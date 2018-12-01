@@ -10,7 +10,10 @@ module.exports = function apply (b, opts) {
 
   pack(b, opts)
 
-  b.transform(babelify, { plugins: [ ['transform-commonjs', { exportsOnly: true }] ] })
+  b.transform(babelify, {
+    only: b._options.entries,
+    plugins: [ ['transform-commonjs', { exportsOnly: true }] ]
+  })
   b.on('reset', rmSyntax)
   rmSyntax()
 
