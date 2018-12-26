@@ -1,10 +1,11 @@
 import join from './dist.js'
+import xtend from './xtend.js'
 
-var tape = require('./node_modules/tape')
+var path = join('one', 'two', 'three')
+console.assert(path === 'one/two/three', 'path join')
 
-tape('run dist.js', t => {
-  var out = join('one', 'two', 'three')
-
-  t.strictEqual(out, 'one/two/three')
-  t.end()
-})
+var obj = xtend({ one: true }, { two: false })
+console.assert(obj.one === true, 'obj first prop')
+console.assert(obj.two === false, 'obj second prop')
+console.assert(obj.no === undefined, 'obj no prop')
+console.log('Tests finished')

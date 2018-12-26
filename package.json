@@ -7,7 +7,7 @@
     "webrunify": "bin.js"
   },
   "scripts": {
-    "test": "standard *.js && node bin.js test/source.js > test/dist.js && webrun --allow-require test/run.js"
+    "test": "standard *.js && node bin.js test/source.js > test/dist.js && node bin.js xtend > test/xtend.js && webrun test/run.js"
   },
   "dependencies": {
     "@babel/core": "^7.1.6",
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@rangermauve/webrun": "^3.0.2",
     "standard": "^12.0.1",
-    "tape": "^4.9.1"
+    "xtend": "^4.0.1"
   },
   "repository": {
     "type": "git",
